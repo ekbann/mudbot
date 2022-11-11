@@ -9,7 +9,7 @@ use IO::Socket;
 # The server to connect to and our details.
 $server = "isengard.nazgul.com";
 $port = "4040";
-$character = "cialis";
+$character = "warrior";
 $password = "qwerty";
 
 # Robot AI variables.
