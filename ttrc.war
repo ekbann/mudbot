@@ -1,0 +1,42 @@
+#session isen isengard.nazgul.com 4040
+#log append isen.log
+
+#highlight {You cast %* for %*} {yellow}
+#highlight {Your %* hits for %*} {yellow}
+#highlight {You gained %* experience %*} {yellow}
+#highlight {You wield %*} {yellow}
+
+#highlight {You attack %*} {red}
+#highlight {%* you for %* damage!} {red}
+#highlight {%* poisoned you.} {red}
+
+#action {You slap the %1.} {#var mob %1; #show {MOB=$mob}}
+#action {You slap %1.} {#var mob %1; #show {MOB=$mob}}
+#action {You wield a %1.} {#var wep %1; #show {WEP=$wep}}
+#action {You FUMBLED %*} {wie $wep}
+#action {You failed to escape!} {flee}
+#action {%* poisoned you.} {use green}
+
+#action {You see Asimele} {ask asi bless; ask asi protection;}
+#action {%* was carrying:%*gold coins%*} {get coin}
+#action {%* was carrying:%*hazy%*} {get hazy}
+
+#alias {z} {#show {Vars: MOB=$mob, WEP=$wep};;}
+#alias {ll} {l $mob}
+#alias {zz} {w;sw;s;sw;e;se;s;w;s;se;}
+
+#macro {\eOP} {ci $mob}
+#macro {\eOQ} {k $mob}
+#macro {\eOR} {c v}
+#macro {\eOS} {rem $wep; flee}
+
+#macro {\e[[A} {ci $mob}
+#macro {\e[[B} {k $mob}
+#macro {\e[[C} {c v}
+#macro {\e[[D} {}
+#macro {\e[[E} {}
+#macro {\e[17~} {}
+#macro {\e[18~} {}
+#macro {\e[19~} {}
+#macro {\e[20~} {}
+#macro {\e[21~} {rem $wep; flee}
